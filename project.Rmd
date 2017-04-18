@@ -1,0 +1,408 @@
+---
+title: 'Cosmic Inflation: A Brief Review'
+author: |
+  | Kornpob Bhirombhakdi
+  | Department of Physics and Astronomy, Ohio University
+  | Athens, Ohio, 45701, USA
+date: "April 15, 2017"
+output:
+  pdf_document: default
+  html_document: default
+header-includes:
+- \usepackage{color}
+- \usepackage{graphicx}
+bibliography: references.bib
+---
+
+# Abstract
+
+This article briefly reviews the cosmic inflation, both theory and observation. Cosmic inflation is believed to occured in between GUT epoch and recombination epoch. During the inflation epoch, the universe expanded rapidly, and was cooled down from the GUT epoch. This inflation was governed by the scalar field *inflaton*. The mechanism is believed to be that the inflaton slowly moved toward its vacuum state. Inflation happened during the inflaton's movement, and ended when the inflaton broke the condition for this slow movement, called *slow-roll* mechanism. Once the inflation ended, the inflaton dampedly osciallated around its vacuum state, and released energy for particle creation and reheating the universe. Then, the universe passed from the reheat epoch to the recombination epoch which can be described by the standard universe model since then. Interestingly, introducing quantum fluctuation during the inflation can produce the primodial fluctuation which is responsible for inhomogeneities observed today in our univserse such as CMB anisotropy and galaxies. CMB anisotropy has been used as a probe to study the early universe. The recent data from @planck2015 supported the prediction from cosmic inflation model called $R^2$ inflation.
+
+# 0. Introduction
+
+Cosmic inflation states that at the moment right after the Big Bang the universe was expanded at very rapid rate. This rapid expansion phase can consistently connect the origin of the universe at the Big Bang to our current observable universe by following the standard universe model: $\Lambda-CDM$ model.
+
+According to the standard universe model, our current universe is about 14 gigayears old with flat spacetime geometry, homogenous, and isotropic. The model fits well with observations. However, if we extrapolate the model's prediction back to the Big Bang, the model fails to connect. This issue is known as *horizon* problem. By introducing the inflationary phase in between the Big Bang and our current universe, the problem can be solved. Besides the horizon problem, there are two more problems which can be solved by introducing the inflation. The problems are known as *flatness*, and *monopole*. We will discuss in details about these problems later in this article.
+
+In order to justify the cosmic inflation, some questions must be answered.
+
+* How did the Big Bang transit to the inflation? (a.k.a. graceful entrance problem)
+* What was the physical process governing the inflation?
+* How did the inflation transit to the standard universe model? (a.k.a. graceful exit problem)
+* How can we model the cosmic inflation?
+* How can we prove the inflationary phase happened?
+
+In this article, we will briefly review the cosmic inflation, and attempt to answer those questions. In short, many models of cosmic inflation were proposed during the past years. The most favourable models share similar idea of having a scalar field, called *inflaton*, evolving towards its vacuum state under the condition called *slow-roll* (@linde1982a, @linde1982b, @linde1982c, @linde1982d, @linde1983).
+
+The early universe was dominated by the inflaton field. Inflaton drove the universe into inflationary phase by moving toward its vacuum state. During the inflation, the universe was expanded, and cool. When the inflaton got close to its vacuum state, the inflation ended by breaking the slow-roll condition, and the inflaton dampedly oscillated, and released its energy. The released energy reheated the universe, and produced particles. Then, the universe gracefully exited to the recombination epoch, and followed the standard model.
+
+Also, during the inflation, quantum fluctuation on the inflaton field and the mass-energy tensor field induced primordial fluctuation which is encoded in inhomogeneities observed today such as cosmic microwave background (CMB) anisotropy and galaxies. CMB anisotropy has been applied as the probe to study the early universe. The observations from missions, such as WMAP and Planck, supported the predictions from cosmic inflation models (e.g. @planck2015). However, there is not enough information to confirm the theory. 
+
+Though, there were already some attempts to answer the graceful entrance problem (e.g. @nunes2005), our unstanding of inflationary epoch is still a big barrier to go beyond. We will not persue further about the graceful entrance problem in this article.
+
+This article is organized as following. First, we revisit the standard universe model. Then, the horizon, flatness, and monopole problems are discussed. Then, without mathematical details, we review the proposal of cosmic inflation since the first one known as *old inflation* (@guth1981), then *new inflation* (@linde1982a, @linde1982b, @linde1982c, @linde1982d), and *chaotic inflation* (@linde1983). After that, we mathematically describe the cosmic inflation model. Next, we see how quantum fluctuation during the inflation can cause the primodial fluctuation, and how we can deduce the primodial fluctuation from observed CMB anisotropy. Then, we see how the most recent analysis from @planck2015 supporting the cosmic inflation models. Last, we conclude.
+
+# 1. Standard Universe Model
+
+Our observations until today are constraining our believes that the current universe is expanding at an increasing rate, with flat spacetime geometry, homogenous, isotropic, and about 14 gigayears old. The standard universe model, which is fit with these observations together with others, is the combination of general relativity, thermodynamics, and statistical mechanics. In general relativity, mainly we have the FRW metric (\autoref{eq-metric} and \autoref{eq-curve}) which captures the homogeneity and isotropy of any curved spacetime geometry. With comoving coordinate $(r,\theta,\phi)$ the metric is
+
+\begin{equation}
+\label{eq-metric}
+{\mathrm{d}s}^{2} = -{c\mathrm{d}t}^{2} +{a}^{2}(t)[{\mathrm{d}r}^{2}+{S}^{2}_{\kappa}(r){\mathrm{d}\Omega}^{2}]
+\end{equation}
+
+\begin{equation}
+\label{eq-curve}
+\begin{split}
+{S}^{2}_{\kappa}(r) &=   R\sin{\frac{r}{R}} \quad (\kappa=+1) \\
+                    &=   r \quad (\kappa=0) \\
+                    &=   R\sinh{\frac{r}{R}} \quad (\kappa=-1)
+\end{split}
+\end{equation}
+
+where $c$ is speed of light, $a$ is scale factor, $\kappa$ is curvature of spacetime geometry ($\kappa=1$ for positively curved geometry, $\kappa=-1$ for negatively curved geometry, and $\kappa=0$ for flat geometry), and $R$ is radius of spacetime geometry.
+
+Together with the Eistein's field equation, we have the Friedmann's equation (\autoref{eq-friedmann})
+
+\begin{equation}
+\label{eq-friedmann}
+H^2(t) = \frac{8{\pi}G}{3c^2}\epsilon(t) - \frac{{\kappa}c^2}{R^2_0a^2(t)}
+\end{equation}
+
+where $H$ is Hubble's parameter, $G$ is gravitational constant, $\epsilon$ is energy density, and $R_0$ is the radius of spacetime geometry $R$ at observer frame. Note that Friedmann's equation relates the dynamic of geometry and energy. 
+
+In the thermodynamics, by assuming adiabatic system, with the given metric, we have the fluid equation (\autoref{eq-fluid})
+
+\begin{equation}
+\label{eq-fluid}
+\dot{\epsilon} + 3\frac{\dot{a}}{a}(\epsilon + 3P) = 0
+\end{equation}
+
+where $P$ is pressure density. This equation simply captures the conservation of energy given the geometry and adiabatic system. 
+
+In the statistical mechanics, we adopt a simple form of the equation of state as in \autoref{eq-eos}
+
+\begin{equation}
+\label{eq-eos}
+P=w\epsilon
+\end{equation}
+
+where $w$ is state parameter.
+
+These equations are the standard universe model. It can be shown that the model can describe our current universe. We will not show it here, but ones can discuss any cosmology textbooks for details (e.g. @ryden, @nutshell, @carroll).
+
+# 2. Horizon, flatness, and monopole problems
+
+In this section, we revisit the famous problems in cosmology known as horizon, and flatness problems. In addition, we will also revisit the monopole problem which is also well-known among high-energy physicists. Then, we will briefly discuss about how the cosmic inflation solves those problems elegantly.
+
+## Horizon problem
+
+Horizon problem argues that the homogenouse and isotropic CMB is impossible according to the standard universe model. To be precisely, the CMB temperature across the observable horizon shows to be about the same $2.7 K$ in any direction. It implies that those locations are in thermal equilibrium, or causally connected in the term of general relativity. But, if we extrapolate back to the origin of the CMB, which is called last scattering surface, according to the standard universe model the observed horizon was causally disconnected, so they should not be in thermal equilibrium as we are observing today. (Detail calculation, see, e.g., @ryden).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.5\textwidth]{ref/cmb.png}
+\caption{Temperature map of cosmic microwave backgroun (CMB) from nine years of WMAP data subtracted by signal from Milky Way. The distance coverage is about $14 Gyr$ old of the universe. The fluctuation is within $10^{-5}K$. The map shows homogeneity and isotropy of the current universe. Source: https://wmap.gsfc.nasa.gov}
+\label{fig-cmb}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.5\textwidth]{ref/horizon_prob.jpg}
+\caption{Horizon problem. This figure shows world line of light in curved geometry. X-axis is comoving space, and Y-axis is conformal time. Current epoch is marked at $\tau_0$, and its past light cone is presented. Time at last scattering surface, where the first light emitted, is roughly equivalent to time at recombination epoch $\tau_{rec}$. The points crossed by $\tau_{rec}$ representing the horizon size. The Big Bang is represented at $\tau_i=0$. Since the past light cones from the antipodal positions of horizon have no intersection back at the Big Bang, they are causally disconnected. On the right, the picture shows the size of last scattering surface (in red) which is smaller than the size of the universe (in black). Source: Baumann (2012)}
+\label{fig-horizon}
+\end{figure}
+
+\autoref{fig-cmb} shows the CMB temperature map from nine years of WMAP data subtracted by signal from Milky Way. Although the temperature map shows fluctuation from red-hot spots to blue-cold spots, the fluctuation is just about $10^{-5}K$ which is considerbly small. Hence, the CMB temperature map shows homogeneity and isotropy of the current universe. Later, we will see that the CMB fluctuation is predicted by cosmic inflation. 
+
+\autoref{fig-horizon} graphically shows the horizon problem. This figure shows world line of light in curved geometry. X-axis is comoving space, and Y-axis is conformal time. Current epoch is marked at $\tau_0$, and its past light cone is presented. Time at last scattering surface, where the first light emitted, is roughly equivalent to time at recombination epoch $\tau_{rec}$. The points crossed by $\tau_{rec}$ representing the horizon size. The Big Bang is represented at $\tau_i=0$. Since the past light cones from the antipodal positions of horizon have no intersection back at the Big Bang, they are causally disconnected. On the right, the picture shows the size of last scattering surface (in red) which is smaller than the size of the universe (in black).
+
+## Flatness problem
+
+Flatness problem states the oddness of the early universe's spacetime geometry being flat. This can be illustrated by extrapolating the standard universe model back to the Big Bang as presented in most of the textbooks (e.g. @ryden). The result shows that the origin of our universe was about $10^{-60}$ in difference from being flat. By that order of difference, we can simply say that the original universe was flat.
+
+The flat universe is also required to have the universe structure as we see today. A slight difference from being flat can cause the universe evolves too rapid that there is not enough time to form the structure. We can seperate this into two scenarios -- positively and negatively curved universe. If original universe is positively curved, the universe will expand until it reaches the maximum size. And, it will contract back to the origin, as called Big Crunch. This expand-contract loop will happen very quick that there is not enough time for the universe to form the structure. In the other scenario where the original universe is negatively curved, the universe will expand very quick, and spread the energy density down to the level that the structure can not form. (This scenario is called Big Bore by @ryden).
+
+While some people see that the flatness of the early universe can be taken as a given initial condition, others see that it needs to be explained.
+
+## Monopole problem
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.5\textwidth]{ref/unification.png}
+\caption{Breaking symmetry of the universe, and forces. The origin universe was in symmetry, and realized only one single force which should be able to describe by the theory called *Theory of Everything*. Because the universe evolved, the symmetry broke, and the universe distinguished forces out. First, the gravity was distinguished (at green), and the theory to explain is called *Supergravity*. Then, the strong nuclear force was distinguished (at blue), and the theory to explain is called *Grand Unified Theory*. Last, the electroweak force was distinguished between the weak nuclear force and the electromanetic force (at purple). Hence, our current universe now realizes four forces -- gravity, electromagnetism, weak nuclear, and strong nuclear -- as we have known now a day.  Source: http://abyss.uoregon.edu}
+\label{fig-toe}
+\end{figure}
+
+As physicists believe in unifying all the four forces -- gravity, electromagnetism, weak nuclear, and strong nuclear -- this leads to what is known *Theory of Everything* (ToE). It is believed that at the origin of the universe (or Big Bang), all the forces were in symmetry as should be explained by ToE. The evolution of the universe broke the symmetry of those forces, and distinguished them a part from each other. The gravity was the first one broken out, and left the universe over with two different realization of forces: gravity and grand unified force. At this epoch, it is call *Grand Unified Theory* (GUT) epoch. After that, the strong nuclear force broke out and left the universe with gravity, strong nuclear force, and electroweak force. Last, the weak nuclear force broke out and left the universe with currently known four forces. \autoref{fig-toe} presents as we discussed.
+
+Though it has been shown theoretically without experimental nor observational proof, we believe that GUT epoch existed somewhere between Big Bang and recombination epoch. As a consequence, GUT also shows that magnetic monopole existed and were relatively dense compared to the size of the GUT epoch. If the universe evolved according to the standard universe model, the monopoles should be observed today. But, as we have already known, we have seen no monopole. So, this is the monopole problem. (Detail numerical presentation, see, e.g., @ryden).
+
+## Solving the problems with cosmic inflation
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.5\textwidth]{ref/inflatehorizon.png}
+\caption{Inflated Horizon. This figure shows world line of light in curved geometry. X-axis is comoving space, and Y-axis is conformal time. Current epoch is marked at $\tau_0$, and its past light cone is presented. Time at last scattering surface, where the first light emitted, is roughly equivalent to time at recombination epoch $\tau_{rec}$. The points crossed by $\tau_{rec}$ representing the horizon size. The Big Bang is represented at $\tau_i=-\infty$. Since the past light cones from the antipodal positions of horizon have intersection area back at the Big Bang, they were causally connected. Source: Baumann (2012)}
+\label{fig-inflatehorizon}
+\end{figure}
+
+Cosmic inflation simply states that, right after the Big Bang, the universe had passed through a rapid expansion phase until it was able to evolve accordingly to the standard universe model. Without applying mathematical illustration, horizon problem can be intuitively solved. Because the expansion rate in the past was quicker than in the current epoch, the inflated horizontal distance is bigger than the one extrapolated back from the standard universe model. \autoref{fig-inflatehorizon} shows the universe with inflation. Compare with \autoref{fig-horizon} which there was no inflation, the horizon we see was in causal contact in the early universe before inflation.
+
+For the flatness problem, mathematical illustration is required (e.g. @ryden). In words, the inflation caused any curved spacetime geometry decaying its curvature down to flat geometry. So, the universe need not to be flat to begin with.
+
+For the monopole problem, intuitive explanation should be sufficient. It is believed that inflationary epoch happened after the GUT epoch. It means the monopoles created before the universe passed inflation. Since the universe expanded rapidly, the density of monopoles also reduced with the expanding universe. The inflation smeared all inhomogeneities existing before the inflation over (@guth1981, @liddle1999, @linde2007).
+
+# 3. Physics of cosmic inflation
+
+In this section, we will delve in the history side of the cosmic inflation, to give us the idea of how the physics of cosmic inflation is now standing on. In brief, the first proposal made by @guth1981, called *old inflation*. It stated the inflation as the first-order phase transition. With some issues, such as the graceful exit problem, the idea did not go far until the next proposal came up by @linde1982a, called *new inflation*. This new inflation stated the inflation as the second-order phase transition involving with a scalar field called *inflaton*. It caught some attention until the next proposal, called *chaotic inflation* popped up by @linde1983. Chaotic inflation does not require any phase transition, but simply is the process governed by the inflaton under proper conditions.
+
+## Old Inflation
+
+@guth1981 first proposed the cosmic inflation which is now a day called *old inflation*. He pictured the inflation occured as the first-order phase transitioning from metastable state (or false vacuum) to the true stable one (or true vacuum). Analogically, the supercooled water, in liquid state with temperature lower than freezing point, is metastable. Only small perturbation (called nucleation) can make it change to ice. The nucleation breaks the symmetry of supercooled water molecules, and crystalize them into ice. The latent heat will be released, and reheat the system temperature back to the freezing point. 
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.5\textwidth]{ref/fig-guth.jpeg}
+\caption{Old inflation. Before the inflation the universe is at the local minimum -- false vacuum -- on the left which has higher energy than the global minimum -- true vacuum. First-order phase transition via quantum tunnelling drives the universe to the true vacuum. The universe inflates on the way, and resumes the standard model at the true vacuum. Source: https://ned.ipac.caltech.edu}
+\label{fig-guth}
+\end{figure}
+
+In the early universe, it had gone supercooled and metastable at false vacuum, then nucleation made it inflated, and released latent heat until reaching the true vacuum. \autoref{fig-guth} shows the scenario schematically. The false vacuum is just a local minimum which has higher energy than the true vacuum at the global minimum. The universe can stay in the false vacuum since it is metastable until enough perturbation drives it to the true vacuum. Quantum tunnelling is believed to be the source of such the perturbation. 
+
+However, this first-order phase transitioning idea has problems in itself (@guth1981, @hawking1982, @guth1983). For example, as the graceful exit problem of the old inflation, the nucleation will happen rapidly and introduce inhomogeneity to the universe. Precisely, the bubbles of nucleation with some different characteristics will form randomly in the universe. Only at the walls of the bubbles will be in contact with each other which makes them be in, e.g., thermal equilibrium. Hence, the topology of the inflated universe will be inhomogenous.
+
+## New Inflation
+
+New inflation (by @linde1982a, @linde1982b, @linde1982c, @linde1982d, and @albrecht1982) was proposed not so long after the problems of the old inflation had been revealed. New inflation happened through the second-order phase transition, instead of the first-order phase transition proposed in the old inflation. Also, the new inflation introduced *inflaton* as the scalar field governing the evolution of the early universe. 
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.5\textwidth]{ref/fig-newinflation.jpeg}
+\caption{New inflation. X-axis is the scalar field inflaton, and Y-axis is its effective potential. Inflaton started at the unstably hilltop of the potential, and slowly rolled down to the global minimum which is the vacuum state. During the slow roll, the universe inflated, and cooled. The inflation ended when the slow-roll condition is broken. Then, inflaton dampedly oscillated around the vacuum state. The damped osciallation made the inflaton release energy to create particles and reheat the universe. Source: https://ned.ipac.caltech.edu}
+\label{fig-newinflation}
+\end{figure}
+
+\autoref{fig-newinflation} schematically shows the new inflation. X-axis is the inflaton, and Y-axis is its effective potential. Inflaton started at the unstably hilltop of the potential, and slowly rolled down to the global minimum which is the vacuum state. During the slow roll, the universe inflated, and cooled. Note that this *slow-roll* mechanism is necessary for the universe to inflate. The inflation ended when the slow-roll condition is broken. It will happen before arriving the vacuum state. Once the inflation ended, the inflaton dampedly oscillated around the vacuum state. The damped osciallation can be described by the vortex fluctuation of the Coleman-Weinberg mechanism (@kleinert1982). By the mechanism, the inflaton released energy to create particles and to reheat the universe. Then, the universe resumed the reionization epoch as described by the standard model. 
+
+The new inflation has its own virtues and vices (@linde2007). Virtues are, for examples, that the second-order phase transition proposed in the new inflation required less fine-tuned, and sounded more natural than the first-order phase transition proposed in the old inflation. Also, it can make the graceful exit.
+
+Vices come from its own fine-tuned issues such as requiring the hilltop-like potential for the slow-roll mechanism, and intrinsically requiring homogeneity prior to the inflation. Also, since it is second-order phase transition, the condition of thermal equilibrium prior to the inflation is necessary.
+
+## Chaotic Inflation
+
+@linde1983 proposed *chaotic inflation* which solved the unsatisfied issues from the new inflation. It showed that "inflation is a natural consequence of chaotic initial conditions." It does not require the hilltop-like potential, nor prior thermal equilibrium. The only requirement is an effective potential which allows for the slow-roll mechanism. Becuase of its simplicity, the chaotic inflation seems to be the fundamental of any cosmic inflation models.
+
+# 4. Cosmic inflation model
+
+In this section, we roughly sketch the cosmic inflation model. Note that since the model is developed under tha idea of chaotic inflation, there is no requirement about the prior thermal equilibrium, but the only requirement is the inflaton's potential allowing for the slow-roll mechanism. This potential can be hilltop-like one, or something else. Since, we will not go into mathematical details, see @linde1983, @langlois2010, and @ryden if you are interested in.
+
+## The model
+
+\begin{equation}
+\label{eq-inflatonenergydensity}
+\epsilon = \frac{1}{2}\dot{\phi}^2 + V(\phi)
+\end{equation}
+
+\begin{equation}
+\label{eq-inflatoneos}
+P = \frac{1}{2}\dot{\phi}^2 - V(\phi)
+\end{equation}
+
+For the inflaton, as the time-dependent scalar field $\phi(t)$, with its effective potential $V(\phi)$, the energy-momentum tensor gives us \autoref{eq-inflatonenergydensity} as its energy density, and \autoref{eq-inflatoneos} as pressure density. ($\dot{\phi} = \frac{\mathrm{d}\phi}{\mathrm{d}t}$).
+Note that from now on, we will work on the Planck units where $G=c=\hbar=k_B=\frac{1}{4{\pi}{\epsilon}_0}=1$. 
+
+With these equations, we can write the Friedmann equation (\autoref{eq-friedmann}), and the fluid equation (\autoref{eq-fluid}) as
+
+\begin{equation}
+\label{eq-chaoticfriedmann}
+H^2 = \frac{1}{3}(\frac{1}{2}\dot{\phi}^2 + V(\phi)) - \frac{{\kappa}}{R_0^2a^2}
+\end{equation}
+
+\begin{equation}
+\label{eq-chaoticeom}
+\ddot{\phi}+3H\dot{\phi}+\frac{\mathrm{d}V}{\mathrm{d}\phi}=0.
+\end{equation}
+
+The system of \autoref{eq-chaoticfriedmann} and \autoref{eq-chaoticeom} is the key of the inflation model. 
+
+Notice that \autoref{eq-chaoticeom} looks similar to damped harmonic oscillator with friction term $3H\dot{\phi}$. For the chaotic inflation or new inflation, $\dot{\phi}\ne0$; there is friction. The inflaton will release energy bechause of damping while moving toward and oscillating around the minimum. Then, it gracefully exits the inflation phase eventually. For the old inflation, $\dot{\phi}=0$; there is no friction. Hence, the inflation, if it oscillates, will osciallates forever, and cannot make the graceful exit.
+
+## Slow-Roll Approximation
+
+\begin{equation}
+\label{eq-slowroll}
+\begin{split}
+\frac{1}{2}\dot{\phi}^2  &\ll V(\phi) \\
+\ddot{\phi}              &\ll 3H\dot{\phi} \\
+H^2                      &\gg \frac{{\kappa}}{R_0^2a^2}
+\end{split}
+\end{equation}
+
+With the chaotic inflation, the inflation can happen even with the chaotic initial conditions, slow-roll regime is the only requirement for the graceful entrance (@linde1983). The slow-roll regime has conditions as in \autoref{eq-slowroll}. The first one means that the potential energy dominates over the kinetic energy. The seond one means the inflaton moves with terminal speed $\dot{\phi} = -\frac{1}{3H}\frac{\mathrm{d}V}{\mathrm{d}\phi}$ when making the entrance. (The friction would make sure that the inflation has the terminal speed at some point before making the entrance). And, the last one is by approximation that the effect of curvature would be neglible compared to the rate of expansion rate captured by the Hubble's parameter $H$; or, to make it simple, the universe is flat ($\kappa = 0$).
+
+Regardless of any initial condition, the slow-roll approximation makes the universe expand at rapid rate; to be precise, it expands exponentially with time. To see this, applying the approximation with the energy density \autoref{eq-inflatonenergydensity} and pressure density \autoref{eq-inflatoneos}, we get $P=-\epsilon$. Compare with the equation of state \autoref{eq-eos}, it implies the universe with state parameter $w=-1$. Under this state, we can show from the standard universe model that the scale factor $a$ is *exponentially* increased with time.
+
+To be more general, the expanding universe means $\ddot{a}>0$. For the standard universe model, any state parameter $w<-\frac{1}{3}$ makes the expansion. This can be shown directly from the second Friedmann equation (\autoref{eq-friedmann2})
+
+\begin{equation}
+\label{eq-friedmann2}
+\frac{\ddot{a}}{a} = -\frac{4\pi}{3}(\epsilon + 3P).
+\end{equation}
+
+This equation sometimes is called acceleration equation since it relates the acceleration of the universe $\ddot{a}$ with the energy and pressure density. Hence, applying \autoref{eq-eos} directly shows that if $w<-\frac{1}{3}$ then $\ddot{a}>0$. However, working with state $w=-1$ is more preferrable by cosmologists because this
+can be interpreted as the dark energy which already is believed to exist. Also, the result of this state is exponential expansion which is mathematically convenient.
+
+## Classification
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.5\textwidth]{ref/class.jpg}
+\caption{Classification of chaotic inflation. As history referece, the term "zoology" was used for this attempt. The zoology is made by considering the expression of the effective potential $V(\phi)$ and vacuum energy. Large field has $\frac{\mathrm{d}^2V}{\mathrm{d}\phi^2}>0$ with zero vacuum energy. Small field has $\frac{\mathrm{d}^2V}{\mathrm{d}\phi^2}<0$ with zero vacuum energy. Hybrid model has $\frac{\mathrm{d}^2V}{\mathrm{d}\phi^2}>0$ with non-zero vacuum energy. In the figure, Y-axis is the potential $V$, and X-axis is the scalar value $\phi$. Each potential can be normalized with two parameters: width $\mu$ and height $\Lambda$. Source: https://ned.ipac.caltech.edu}
+\label{fig-class}
+\end{figure}
+
+As we have seen, the inflation model generally means \autoref{eq-chaoticfriedmann} to \autoref{eq-chaoticeom} with the slow-roll approximation \autoref{eq-slowroll}. So, with different effective potential $V(\phi)$, each model behaves slightly different, and leads to different predictions in observations later on.
+
+We will try to classify the effective potentials into groups as shown in \autoref{fig-class}. As history reference, the term "zoology" was used for this attempt (@kinney2003). The zoology can be slightly different from one article to another (e.g. @dodelson1997, @kinney2003, and @pieroni2016). Here, we follow @kinney2003.
+
+In general, any potential can be written in the form
+
+\begin{equation}
+\label{eq-zoo}
+V(\phi) = {\Lambda}^4f(\frac{\phi}{\mu})
+\end{equation}
+
+where $\Lambda$ is the height parameter, and $\mu$ is the width parameter. Then, each model will be distinguished by the explicit form of $f(\cdot)$. It is classified into four classes: large field model, small field model, linear model, and hybrid model.
+
+For the first three classes, they are single scalar-field model with zero vacuum energy distinguished by $\frac{\mathrm{d}^2V}{\mathrm{d}\phi^2}$. Precisely, $\frac{\mathrm{d}^2V}{\mathrm{d}\phi^2}>0$ for large field model, $\frac{\mathrm{d}^2V}{\mathrm{d}\phi^2}<0$ for small field model, and $\frac{\mathrm{d}^2V}{\mathrm{d}\phi^2}=0$ for linear model.
+
+For the hybrid model, its mathematical expression will be in the form of multiple scalar fields. The additional scalar fields are meant to control the universe state such as entering/exiting the inflation. However, because those additional fields are constrainted to the inflaton $\phi$, in general any hybrid model can be equivalently expressed as a single inflaton field. And, in general, the model has $\frac{\mathrm{d}^2V}{\mathrm{d}\phi^2}>0$ with non-zero vacuum energy.
+
+
+
+# 5. From Cosmic inflation to primodial fluctuation
+
+By introducing quantum fluctuation, the inflation ended at slightly different times at different positions because of the inflaton fluctuation ${\delta}{\phi}$ (@mukhanov1981, @hawking1982b, @starobinsky1982, @guth1982, @bardeen1983). This caused the primodial fluctuation in both scalar and tensor fields. Interchangeably, scalar and tensor fluctuation is called (energy) density, and gravitational wave fluctuation respectively. The power spectrum functions of scalar and tensor fluctuation are 
+
+\begin{equation}
+\label{eq-spectrumdensity}
+P_s(k) \propto \frac{V^3}{V'^2}
+\end{equation}
+
+\begin{equation}
+\label{eq-spectrumtensor}
+P_t(k) \propto V
+\end{equation}
+
+where $P_s, P_t$ are power spectrum functions of scalar and tensor fluctuation respectively, $k$ is wavenumber, $V$ is inflaton's effective potential, and $V'$ is $\frac{\mathrm{d}V}{\mathrm{d}\phi}$. (For mathematical details, @ryden, @linde2007, @langlois2010, @baumann2009, @baumann2012). 
+
+Note that the inflaton fluctuation depends on both time and position, but the dependency is reduced to be wavenumber in the power spectrum \autoref{eq-spectrumdensity} and \autoref{eq-spectrumtensor}. To explain this, in brief, statically the two-point power spectrum function at different positions
+
+\begin{equation}
+\label{eq-spectralfunction}
+P_{xy}(\vec{k}_x,\vec{k}_y) = \mathcal{F}\{E_t[{\delta}x^*(t,\vec{r}_x){\delta}y(t,\vec{r}_y)]\}
+\end{equation}
+
+where $P_{xy}(\cdot)$ is the power spectrum function between observed stochastic variables ${\delta}x(t,\vec{r}_x)$ and ${\delta}y(t,\vec{r}_y)$ both depended on time and position, ${\delta}x^*$ denotes the imaginary conjugate of ${\delta}x$, $\vec{k}_i$ is wave vector of ${\delta}i(t,\vec{r}_i)$ for $i=x,y$, $\mathcal{F}$ is Fourier transformation, and $E_t[\cdot]$ is the time (ensemble) average. The ensemble average eliminated time dependency, and the Fourier transformation transforms the dependency of a function into its conjugate space which is the wave vector. Precisely, in physics, the conjugate space of position is momentum, which is equivalent to wave vector. And, wavenumber is $k = \sqrt{\vec{k}^2}$.
+
+For convenience, we like to assume the power spectra are approximately power function parameterized by amplitude $A$ and power index $n$. Precisely,
+
+\begin{equation}
+\label{eq-spectrumdensitypower}
+P_s(k) = A_s(k_\star)(\frac{k}{k_\star})^{n_s(k_\star) - 1 + \Delta_s}
+\end{equation}
+
+\begin{equation}
+\label{eq-spectrumtensorpower}
+P_t(k) = A_t(k_\star)(\frac{k}{k_\star})^{n_t(k_\star) + \Delta_t}
+\end{equation}
+
+where $k_\star$ is pivot wavenumber, and $\Delta$ is higher-order terms a.k.a. running of spectral index. Conventionally, instead of expressing the fluctuation in parameter space $(n_s,n_t)$, we define
+
+\begin{equation}
+\label{eq-tensorscalarratio}
+r = \frac{P_t(k_\star)}{P_s(k_\star)}
+\end{equation}
+
+where $r$ is called tensor-to-scalar ratio to transform the space to $(n_s,r)$.
+
+\begin{equation}
+\label{eq-diagraminflationtofluctuation}
+V \rightarrow P_s, P_t \rightarrow (n_s,r) \rightarrow \Delta(T,E,B) \rightarrow C_l(TT,TE,EE,BB)
+\end{equation}
+
+In summary, as shown in \autoref{eq-diagraminflationtofluctuation}, given the inflaton with its effective potential $V$, the inflation leads to primodial fluctuation in both scalar and tensor fields. The information of the fluctuation can be parameterized as $(r,n_s)$. In the next section, we will see how the primodial fluctuation $(r,n_s)$ affects CMB anisotropy $\Delta(T,E,B)$.
+
+# 6. From CMB anisotropy to primodial fluctuation
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.5\textwidth]{ref/epoch.png}
+\caption{Evolution of the universe, and observable data. Y-axis is the scale factor, or the size of the universe, which also corresponds to important epochs of universe. X-axis represents age, redshift, and energy scale of the universe. CMB anisotropy was originated by the primodial fluctuation during the inflation epoch, and it is still observable today. Source: Baumann and Peiris (2009)}
+\label{fig-epoch}
+\end{figure}
+
+\autoref{fig-epoch} shows evolution of the universe, and observable data (@baumann2009). Y-axis is the scale factor, or the size of the universe, which also corresponds to important epochs of the universe. X-axis represents age, redshift, and energy scale of the universe. As we see, the observable data originated during the inflation epoch is associated to CMB anisotropy. 
+
+Precisely, CMB anisotropy, together with other structure formation in our current universe, is believed to be caused by inhomogeneities during the early universe (which is called primordial fluctuation). Since the inflationary phase should smeared any existing inhomogeneity before the event over the space due to the rapid expansion, and introduce homogeneity, the current observed inhomogeneities should be happened during the event, or after. However, since any inhomogeneity after the inflation should be more localized, the CMB anisotropy is strongly to be caused by fluctuations during the inflation. Hence, CMB anisotropy has been used as the probe to study the inflation.
+
+Observed CMB anisotropy contains three important fluctuations: temperature and polarization in E and B modes. Hence, we characterize the CMB anisotropy by three parameters as $\Delta(T,E,B)$. Since, our CMB observation is made on a solid angle, we can expand our observation $x$ in to the spherical harmonics space as
+
+\begin{equation}
+\label{eq-shar}
+\frac{{\Delta}x}{\bar{x}}(\theta,\phi) = \sum_{l,m}a^x_{lm}Y_{lm}(\theta,\phi)
+\end{equation}
+
+where $Y_{lm}$ is the spherical harmonics function, and $a_{lm}^x$ is the coefficient. Then, we can find the power spectrum between observed variables $x, y$ at multipole number $l$ as
+
+\begin{equation}
+\label{eq-cmbspectrum}
+C_l^{xy} = \frac{1}{2l+1}\sum_{m}(a_{lm}^* a_{lm})
+\end{equation}
+
+where $C_l^{xy}$ is the power spectrum, and $a_{lm}^*$ is the imaginary conjugation of $a_{lm}$. From \autoref{eq-cmbspectrum}, with the observation $\Delta(T,E,B)$, we have four possible spectra: TT, EE, BB, and TE. The spectra TB and EB vanishes because of symmetry.
+
+The last part of this jigsaw is to connect the observed spetra of CMB anisotropy back to the primodial fluctuation. This can be done by using the transfer functions (@planck2015). The relationship between the primodial fluctuation and the CMB spectra via the transfer functions is
+
+\begin{equation}
+\label{eq-transfer}
+C_l^{xy,i} = \int_0^\infty
+\frac{dk}{k}\Delta_l^{x,i}(k)\Delta_l^{y,i}(k)P_i(k)
+\end{equation}
+
+where $\Delta_l^{x,i}$ is the transfer function at multipole number $l$ of observed variable $x$ relating to the $i$ primodial fluctuation, $x = T,E,B$, $i$ is either scalar or tensor, and $P$ is the primodial fluctuation as defined in \autoref{eq-spectrumdensitypower} and \autoref{eq-spectrumtensorpower}.
+
+# 7. Observations from Planck 2015
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.5\textwidth]{ref/planck2015.png}
+\caption{Planck 2015 results. X-axis is the scalar spectral index $n_s$ at $k_\star=0.05Mpc^{-1}$ (or primordial tilt). ($k_\star$ is the pivot scale, e.g. $(\frac{k}{k_\star})^q$ for a power function). Y-axis is the tensor-to-scalar power ratio $r$ at $k_\star=0.002Mpc^{-1}$. By applying the available data (i.e. Planck TT + lowP + BKP + BAO), the constraint parameter space matches well with Hilltop quartic model, and $R^2$ inflation. Source: Ade and others (2015)}
+\label{fig-planck}
+\end{figure}
+
+The most recent data from CMB anisotropy came from Planck survey 2015 release. Planck was a space observatory operated during 2009-2013. Regarding to constraining on inflation, The analysis in @planck2015, which applied both Planck survey and non-Planck survey from BICEP2/Keck Array (or BKP) and baryon acoustic oscillation (BAO) data, showed the scalar spectral index $n_s = 0.965 \pm 0.006$ at 95% CL without running ($\Delta_s = -0.008 \pm 0.008$ at 68% CL), and the tensor-to-scalar ratio $r_{k_\star=0.002} < 0.11$ at 95% CL. This strongly supported $R^2$ inflation model.
+
+\autoref{fig-planck} shows the results from the article. X-axis is the scalar spectral index (a.k.a. primordial tilt) $n_s$ at $k_\star=0.05Mpc^{-1}$. Y-axis is the tensor-to-scalar power ratio $r$ at $k_\star=0.002Mpc^{-1}$. The area inside the contour of Planck TT + lowP + BKP + BAO marginally constraints the joint 68% CL of Planck data and 95% CL of BICEP2/Keck Array, and BAO data. (BKP  is @bkp2015). As we see, Hilltop quartic model and $R^2$ inflation model are the best match with the data. However, since the Hilltop quartic model is a lot less constrained, the $R^2$ inflation model is strongly favoured. In brief about $R^2$ inflation model, its effective potential is in the form as 
+
+\begin{equation}
+\label{eq-r2}
+V(\phi) = \Lambda^4(1-e^{-\sqrt{2/3}\phi/M_{pl}})^2
+\end{equation}
+
+where $M_{pl}$ is planck mass. It was the first proposed by @starobinsky1980, even before @guth1981 mentioning the cosmic inflation. It is considered as small-field model (i.e. $\frac{\mathrm{d}^2V}{\mathrm{d}\phi^2}<0$, single field with zero vacuum energy).
+
+# 8. Conclusion
+
+Cosmic inflation states that the early universe right after the Big Bang passed through the very rapid expansion rate before it connected to the universe we currently believe to be modelled by the standard model. Since first proposed by @guth1981 as old inflation, follwed by some extension by @linde1982a as new inflation and @linde1983 as chaotic inflation, it has been survived against many tests, while other alternatives showed up but failed to do so.
+
+In order to be a good candidate for explaining the early universe, the theory must be able to (i) make graceful entrance, (ii) make graceful exit, (iii) solve horizon, flatness, and monopole problems, etc. Cosmic inflation is the promising theory which can meet all of the requirements.
+
+The mechanism of cosmic inflation currently is believed to be caused by the motion of the scalar field *inflaton* which dominated the early universe. While it was moving slowly toward its vacuum state, the universe went through inflationary phase. Once the inflaton reached the vicinity of its vacuum, the inflation ended, and the inflaton dampedly oscillated. The damped oscillation made the inflaton release energy to create particles, and reheat the universe. Then, the universe continued evolving according to the standard model by resuming at the reionization epoch. Additionally, by introducing quantum fluctuation of the inflaton during the inflationary phase, the inflaton can produce primodial fluctuation in both scalar and tensor fields which lead to our current universe's inhomogeneities observed at large scale such as CMB anisotropy and galaxies.
+
+Among classes of the inflation model, the recent analysis from @planck2015 narrowed our searching space down to only small-field inflation models. Among these, the analysis strongly supported $R^2$ inflation model which actually first proposed by @starobinsky1980, even before the proposal of cosmic inflation in 1981.
+
+For the next step, theoretically, though the searching space was narrowed down to only small-field inflation models, there should be some rooms for new models. Alternative mechanism to the cosmic inflation is always possible though might be hard to survive through many tests. Graceful entrance problem still has spaces with less observational constraints. Observationally, there will be better facilities for cosmological survey, e.g. LSST, WFIRST, and Euclid, which will be lauched around the year 2020.
+
+# References
